@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://derbycoffee.com/wp-content/uploads/2024/05/fav_icon-150x150.png" sizes="32x32" />
     <title>Derby</title>
-    <!-- Style Css -->
-    <link rel="stylesheet" href="css/master.css">
     <link rel="stylesheet" href="css/normalize.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="css/all.min.css">
@@ -22,6 +20,9 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- Glightbox -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <!-- Style Css -->
+    <link rel="stylesheet" href="css/master.css">
+
 </head>
 <body>
     <!-- Start Header -->
@@ -63,7 +64,7 @@
     <!-- Start Landing -->
     <div class="landing">
         <div class="container">
-            <div class="swiper">
+            <div class="swiper swiper-landing">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide slide-1">
                         <div class="text">
@@ -75,19 +76,25 @@
                             <div class="items">
                                 <div class="box">
                                     <div class="image">
-                                        <img src="image/cup-1.png" alt="Cup">
+                                        <a href="image/cup-1.png" class="glightbox">
+                                            <img src="image/cup-1.png" alt="Your Image Description">
+                                        </a>
                                     </div>
                                     <span>موهيتو بلو </span>
                                 </div>
                                 <div class="box">
                                     <div class="image">
-                                        <img src="image/cup-1.png" alt="Cup">
+                                        <a href="image/cup-1.png" class="glightbox">
+                                            <img src="image/cup-1.png" alt="Your Image Description">
+                                        </a>
                                     </div>
                                     <span>موهيتو بلو </span>
                                 </div>
                                 <div class="box">
                                     <div class="image">
-                                        <img src="image/cup-1.png" alt="Cup">
+                                        <a href="image/cup-1.png" class="glightbox">
+                                            <img src="image/cup-1.png" alt="Your Image Description">
+                                        </a>
                                     </div>
                                     <span>اوشن</span>
                                 </div>
@@ -112,12 +119,185 @@
                     </div>
                 </div>
                 <div class="swiper-pagination"></div>
+                <img class="paper d-none d-lg-block" src="image/paper.svg" alt="paper">
+                
             </div>
         </div>
+        <img class="coffe d-none d-lg-block" src="image/coffe.svg" alt="coffee">
         <div class="white-wave"></div>
     </div>
     <!-- End Landing -->
-
+    <!-- Start About Us -->
+    <div class="about-us">
+        <div class="container">
+            <div class="text">
+                <span>من نحن</span>
+                <h1>عن دربي</h1>
+                <p>
+                    في عام 2002,كانت الشركة عبارة عن كوفي شوب صغير في الدمام قدمت دربي أجود أنواع القهوة المحمصة بحبوبها الكاملة وبعد فترة وجيزة تطور العمل وتم الانتشار ليس فقط بالدمام بل بأغلب مناطق المملكة العربية السعودية و مملكة البحرين ايضاً, أصبح لدينا مايقارب ال84 فرع محليا ودولياً.
+                </p>
+            </div>
+            <div class="image">
+                <img src="image/cup-about-us.svg" alt="cup-about-us">
+            </div>
+        </div>
+        <img src="image/about-us-paper.svg" alt="about-us-paper">
+    </div>
+    <!-- End About Us -->
+    <!-- Start Product -->
+    <div class="products">
+        <div class="container">
+            <span>المنتجات الجديدة</span>
+            <div class="head">
+                <h1>منتجات جديدة</h1>
+                 <!-- <a href="#">sdsa</a> -->
+                <a href="#">عرض المزيد <i class="fa-solid fa-caret-left"></i></a>
+            </div>
+            <div class="boxes">
+                <!-- Box -->
+                <div class="box">
+                    <div class="image">
+                        <img src="image/product-1.svg" alt="Product 1">
+                    </div>
+                    <div class="text">
+                        <span class="offer">عرض</span>
+                        <h3>وايت موكا</h3>
+                        <span class="size">كبير</span>
+                        <span class="old-price">1.5 ريال</span>
+                        <span class="new-price">11.5 ريال</span>
+                    </div>
+                </div>
+                <!-- Box -->
+                <div class="box">
+                    <div class="image">
+                        <img src="image/product-1.svg" alt="Product 1">
+                    </div>
+                    <div class="text">
+                        <span class="offer">عرض</span>
+                        <h3>وايت موكا</h3>
+                        <span class="size">كبير</span>
+                        <span class="old-price">1.5 ريال</span>
+                        <span class="new-price">11.5 ريال</span>
+                    </div>
+                </div>
+                <!-- Box -->
+                <div class="box">
+                    <div class="image">
+                        <img src="image/product-1.svg" alt="Product 1">
+                    </div>
+                    <div class="text">
+                        <span class="offer">عرض</span>
+                        <h3>وايت موكا</h3>
+                        <span class="size">كبير</span>
+                        <span class="old-price">1.5 ريال</span>
+                        <span class="new-price">11.5 ريال</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Product -->
+    <!-- Start Coffe Types -->
+    <div class="coffee-types">
+        <div class="container">
+            <span>لدينا جميع</span>
+            <div class="head">
+                <h1>أنواع  القهوة</h1>
+                <!-- <a href="#">عرض المزيد <i class="fa-solid fa-caret-left"></i></a> -->
+            </div>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="image">
+                        <img src="image/type-1.svg" alt="Coffee">
+                        <p>القهوة العريبة</p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image">
+                        <img src="image/type-1.svg" alt="Coffee">
+                        <p>القهوة العريبة</p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image">
+                        <img src="image/type-1.svg" alt="Coffee">
+                        <p>القهوة العريبة</p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image">
+                        <img src="image/type-1.svg" alt="Coffee">
+                        <p>القهوة العريبة</p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image">
+                        <img src="image/type-1.svg" alt="Coffee">
+                        <p>القهوة العريبة</p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image">
+                        <img src="image/type-1.svg" alt="Coffee">
+                        <p>القهوة العريبة</p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image">
+                        <img src="image/type-1.svg" alt="Coffee">
+                        <p>القهوة العريبة</p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="image">
+                        <img src="image/type-1.svg" alt="Coffee">
+                        <p>القهوة العريبة</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div> -->
+            </div>
+        </div>
+    </div>
+    <!-- End Coffe Types -->
+    <!-- Start Branches -->
+    <div class="branches">
+        <div class="container">
+            <div class="text">
+                <span>رحلة القهوة: تذوق، اكتشف، وعش تجربة فريدة من نوعها</span>
+                <h2>فروع دربي</h2>
+            </div>
+            <div class="co-branch">
+                <div class="form">
+                    <form action="#">
+                        <span>اختر المدينة</span>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>مدينة جدة</option>
+                            <option value="1">الرياض</option>
+                            <option value="2">الدمام</option>
+                            <option value="3">الطائف</option>
+                          </select>
+                    </form>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">فرع الأول</li>
+                        <li class="list-group-item">الفرع الثاني</li>
+                        <li class="list-group-item">الفرع الثاني</li>
+                        <li class="list-group-item">الفرع الثاني</li>
+                    </ul>
+                </div>
+                <div class="google-map">
+                    <div class="map" id="map"></div>
+                </div>
+            </div>
+            <div class="footer">
+                رحلة القهوة: تذوق، اكتشف، وعش تجربة فريدة من نوعها
+            </div>
+        </div>
+    </div>
+    <!-- End Branches -->
+      
     <!-- JavaScript -->
     <!-- jquery -->
     <script src="js/jquery.js"></script>
@@ -129,16 +309,41 @@
     <script type="module">
         import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
       
-        const swiper = new Swiper('.swiper', {
+        const swiperLanding = new Swiper('.swiper-landing', {
             loop: true,
 
             pagination: {
                 el: '.swiper-pagination',
             },
         });
+
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 3,
+            spaceBetween: 0,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
     </script>
     <!-- glightbox  -->
     <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
-      
+    <script>
+    const lightbox = GLightbox({
+        selector: '.glightbox', // Optional: Define a selector for the lightbox
+    });
+    </script>
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBtCZfn9ZW5uBVbQiOYdeKHsJm3Uw-O4Y&callback=initMap" async defer></script>
+    <script>
+        function initMap() {
+            var options = {
+                zoom: 8,
+                center: {lat: 29.9611, lng: 30.9296}
+            }
+        }
+
+        var map = new google.maps.map(document.getElementById('map'), options);
+    </script>
 </body>
 </html>

@@ -1,7 +1,47 @@
 /* Start Import Google Font */
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+@font-face {
+    font-family: 'Suisse_Intl';
+    src: url('fonts/Suisse_Intl_Bold.ttf') format('ttf');
+    font-weight: bold;
+    font-style: normal;
+}
 
+@font-face {
+    font-family: 'Suisse_Intl';
+    src: url('fonts/Suisse_Intl_Book.ttf') format('ttf');
+    font-weight: 400; /* or use 'normal' */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Suisse_Intl';
+    src: url('fonts/Suisse_Intl_Medium.ttf') format('ttf');
+    font-weight: 500; /* or 'medium' if it applies */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Suisse_Intl';
+    src: url('fonts/Suisse_Intl_Mono.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Suisse_Intl';
+    src: url('fonts/Suisse_Intl_Regular.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Suisse_Intl';
+    src: url('fonts/SuisseIntl-Light.ttf') format('ttf');
+    font-weight: 300; /* for light */
+    font-style: normal;
+}
 /* End Import Google Font */
 
 /* Start Global Rules */
@@ -501,7 +541,7 @@ ul {
 .landing .white-wave {
     background-image: url(/image/white-wave.svg);
     position: absolute;
-    bottom: -725px;
+    bottom: -687px;
     left: 0;
     z-index: 1;
     height: 100%;
@@ -509,6 +549,360 @@ ul {
     background-repeat: no-repeat;
     background-size: contain;
 }
+
+.landing .coffe, 
+.landing .paper {
+    position: absolute;
+}
+
+.landing .coffe {
+    bottom: 185px;
+    left: 168px;
+}
+
+.landing .paper {
+    top: 0;
+    left: 300px;
+}
+
+.landing .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+    top: unset;
+    bottom: 76px;
+}
 /* End Landing */
+/* Start about-us */
+.about-us {
+    position: relative;
+}
+
+.about-us .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 10px;
+    padding: 100px 0;
+}
+
+.about-us > img {
+    position: absolute;
+    top: 0;
+    left: 128px;
+    z-index: -1;
+}
+
+.about-us .text {
+    font-family: 'cairo', sans-serif;
+    width: 550px;
+}
+
+@media (max-width: 768px) {
+    .about-us .text {
+        width: auto;
+        padding: 0 15px;
+    }
+}
+
+.about-us .text span {
+    color: #5E5E5E;
+    font-size: 24px;
+}
+
+.about-us .text h1 {
+    font-weight: 900;
+    margin: 15px 0 30px;
+    font-size: 44px;
+}
+
+.about-us .text p {
+    text-align: justify;
+    font-size: 20px;
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+    line-height: 1.7;
+}
+
+.about-us .image {
+    background-image: url(/image/about-us.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: -21px -22px;
+    padding-top: 50px;
+}
+
+.about-us .image img {  
+    max-width: 100%;
+}
+
+.about-us > img {
+    position: absolute;
+    right: 0px;
+}
+
+/* End about-us */
+/* Start Product */
+.products {
+    padding-bottom: 100px;
+    padding-top: 100px;
+}
+
+.products .container {}
+
+.products .container > span {
+    font-family: 'IBM Plex Sans Arabic';
+    color: #5E5E5E;
+    font-size: 24px;
+}
+
+.products .head {
+    display: flex;
+    /* flex-wrap: nowrap; */
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.products .head h1 {
+    font-size: 44px;
+    font-weight: 900;
+    font-family: "cairo", sans-serif;
+}
+
+.products .head a {
+    display: block;
+    background: #1F1F1F;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 27px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.products .head a i {
+    margin-right: 5px;
+}
+
+.products .boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 40px;
+}
+
+.products .boxes .box {
+    display: flex;
+    align-content: space-evenly;
+    gap: 15px;
+    position: relative;
+    border: 1px solid #DFDFDF;
+    border-radius: 16px;
+    padding: 10px;
+}
+
+.products .boxes .box .image {}
+
+.products .boxes .box .image img {
+    max-width: 100%;
+}
+
+.products .boxes .box .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 0;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+}
+
+.products .boxes .box .text .offer {
+    position: absolute;
+    background: #A61F1C;
+    color: white;
+    font-weight: 500;
+    padding: 7px 15px;
+    border-radius: 26px;
+    font-size: 14px;
+    right: 19px;
+
+}
+
+.products .boxes .box .text h3 {
+    font-size: 29px;
+}
+
+.products .boxes .box .text .size {
+    color: #5E5E5E;
+    font-size: 24px;
+}
+
+.products .boxes .box .text .old-price {
+    font-size: 14px;
+    color: #ACACAC;
+    text-decoration: line-through;
+    font-weight: 500;
+}
+
+.products .boxes .box .text .new-price {
+    color: #D55107;
+    font-size: 24px;
+    font-weight: 700;
+}
+/* End Product */
+/* Start Coffee Types */
+.coffee-types {
+    background-image: url(/image/types-coffee.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 100px 0;
+    padding: 100px 0;
+}
+.coffee-types .container {
+    overflow: hidden;
+}
+
+.coffee-types .container > span {
+    color: #F1C072;
+    font-size: 24px;
+}
+
+.coffee-types .head {}
+
+.coffee-types .head h1 {
+    color: #F6E6DA;
+    font-family: 'IBM Plex Sans Arabic';
+    font-weight: 700;
+    font-size: 44px;
+    margin: 16px 0 40px;
+}
+
+.coffee-types .swiper {
+    width: 100%;
+    height: 355px;
+    color: white;
+    overflow: visible;
+}
+
+.coffee-types .swiper .swiper-slide .image {
+    position: relative;
+}
+
+.coffee-types .swiper .swiper-slide .image img {
+   max-width: 100%;
+}
+
+.coffee-types .swiper .swiper-slide .image p {
+    position: absolute;
+    right: 20px;
+    bottom: 0;
+    font-size: 34px;
+    font-weight: 300;
+    color: #F6E6DA;
+}
+/* End Coffee Types */
+/* Start Branches */
+.branches {
+    padding: 100px 0;
+}
+
+.branches .container {
+    position: relative;
+}
+.branches .text {}
+
+.branches .text span {
+    color: #5E5E5E;
+    font-size: 24px;
+}
+.branches .text h2 {
+    font-family: 'IBM Plex Sans Arabic';
+    font-weight: 900;
+    font-size: 44px;
+    margin: 20px 0 50px;
+}
+
+.branches .co-branch {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    border: 1px solid #D6D6D6;
+    padding: 15px 12px;
+    border-radius: 20px;
+    position: relative;
+    z-index: 1;
+    background: white;
+}
+.branches .co-branch form {}
+
+.branches .co-branch form > span {
+    color: #5E5E5E;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    display: block;
+    margin-bottom: 15px;
+}
+.branches .co-branch select {
+    background: #F8F8F8;
+    border: none;
+    padding: 0.6rem 2.25rem .6rem .75rem;
+    text-align: right;
+    direction: rtl;
+    font-size: 22px;
+    font-weight: 700;
+    min-width: 300px;
+    position: relative;
+}
+
+.branches .co-branch .form {
+    position: relative;
+}
+
+.branches .co-branch .form::before {
+    content: "\f0d7";
+    font-family: "Font Awesome 6 Pro";
+    font-weight: 900;
+    position: absolute;
+    top: 56px;
+    left: 14px;
+    color: #1f1f1f;
+    z-index: 1;
+}
+
+.branches .co-branch .list-group {
+    margin-top: 30px;
+}
+
+.branches .co-branch .list-group .list-group-item {
+    color: #1F1F1F;
+    font-weight: 500;
+    font-family: 'IBM Plex Sans Arabic';
+    font-size: 19px;
+    margin-bottom: 9px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.branches .co-branch .list-group .list-group-item:hover {
+    opacity: 0.5;
+}
+
+.branches .map {
+    flex: 1;
+}
+
+.branches .footer {
+    background-color: #D55107;
+    font-size: 26px;
+    font-weight: 600;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    padding: 15px 46px;
+    color: #F6E6DA;
+    border-radius: 20px;
+    margin-top: -37px;
+    padding-top: 50px;
+}
+
+.branches .google-map #map {
+    width: 100%;
+    height: 200px;
+}
+
+/* End Branches */
+
 
 
