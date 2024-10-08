@@ -949,6 +949,248 @@ ul {
     align-items: center;
 }
 /* End Branches */
+/* Start Blog */
+.blog {
+    padding-bottom: 100px;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+}
 
+.blog  .container > span {
+    color: #5E5E5E;
+    font-size: 24px;
+}
+
+.blog  .container .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.blog  .container .head p {
+    font-size: 44px;
+    font-weight: 700;
+    margin: 11px 0 25px;
+}
+
+.blog  .container .head a {  
+    display: block;
+    background: #1f1f1f;
+    color: white;
+    padding: 5px 20px;
+    font-size: 18px;
+    border-radius: 30px;
+    font-weight: 500;
+    
+}
+
+.blog  .boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.blog  .boxes .box {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.blog  .boxes .box .image img {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.blog  .boxes .box .date {
+    display: block;
+    color: #d55107;
+    font-weight: 500;
+    font-size: 15px;
+    margin: 10px 0 15px;
+}
+
+.blog  .boxes .box .title {
+    color: #1F1F1F;
+    font-weight: 700;
+    font-size: 19px;
+    margin-bottom: 15px;
+}
+
+.blog  .boxes .box .body {
+    color: #5E5E5E;
+    font-size: 15px;
+    font-weight: 500;
+}
+/* End Blog */
+/* Start App */
+.app {
+    background-color: #F6E6DA;
+    padding: 100px 0;
+    position: relative;
+    background-color: #F6E6DA;
+    padding: 100px 0;
+    position: relative;
+    background-image: url(/image/white-wave2.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 1px -34px;
+}
+
+@media (max-width: 992px) {
+    .app {
+        background-position: 0 -2px;
+    }
+}
+
+.app::before {
+    content: "";
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    bottom: 99px;
+    left: 0;
+    background: #DFC7B5;
+}
+
+.app .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@media (max-width: 992px) {
+    .app .container {
+        flex-direction: column;
+    }
+}
+
+.app .text h1 {
+    font-weight: 700;
+    font-size: 44px;
+    margin-bottom: 30px;
+}
+.app .text .download {
+    display: flex;
+    gap: 20px;
+    position: relative;
+}
+
+@media (max-width: 992px) {
+    .app .text .download {
+        justify-content: center;
+        margin-bottom: 50px;
+    }
+}
+
+.app .text .download img {
+    max-width: 100%;
+    width: 190px;
+}
+.app .image img:first-child {
+    max-width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.app .app-paper {
+    position: absolute;
+    top: 184px;
+    left: 338px;
+}
+/* End App */
+/* Start Footer */
+.footer {
+    background-color: #F6E6DA;
+}
+
+@media (max-width: 768px) {
+    .footer .box {
+        margin-bottom: 40px;
+    }
+}
+.footer .box p {
+    font-size: 14px;
+    font-weight: 700;
+    font-family: cairo;
+}
+
+.footer .box ul li {
+    font-weight: 500;
+    padding: 5px 0;
+}
+
+.footer .box:last-child ul li {
+    font-weight: 400;
+}
+
+.footer .box li a {
+    color: #1f1f1f;
+}
+.footer .box li a i {
+    padding-left: 5px;
+}
+
+.footer .box form {
+    display: flex;
+    align-items: center;
+    width: 70%;
+}
+
+.footer .box form input[type=email] {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border: 1px solid #d2c3b8;
+    padding: 15px 10px 15px;
+}
+
+.footer .box form input[type=submit] {
+    width: fit-content;
+    border-radius: 8px 0 0 8px;
+    background: transparent;
+    color: #495057;
+    border-color: #d2c3b8;
+    border-right: none;
+    font-weight: 700;
+    font-family: 'IBM Plex Sans Arabic';
+    padding: 15px 10px;
+}
+
+.footer .box form .form-control:focus {
+    box-shadow: none;
+}
+
+.copy-right {
+    background-color: #EADCD2;
+}
+
+.copy-right .container {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: cairo;
+    align-items: center;
+    padding: 20px 10px;
+}
+
+@media (max-width: 768px) {
+    .copy-right .container {
+        flex-direction: column;
+        align-items: self-start;
+    }
+
+    .copy-right .container p {
+        margin: 11px auto 0px !important;
+    }
+
+}
+
+.copy-right .first {
+    display: flex;
+    gap: 15px;
+}
+.copy-right .first a {
+    color: #1F1F1F;
+}
+/* End Footer */
 
 
