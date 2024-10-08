@@ -273,18 +273,15 @@
                 <div class="form">
                     <form action="#">
                         <span>اختر المدينة</span>
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>مدينة جدة</option>
-                            <option value="1">الرياض</option>
-                            <option value="2">الدمام</option>
-                            <option value="3">الطائف</option>
-                          </select>
+                        <select class="form-select" id="governorate-select" aria-label="Default select example">
+                            <option selected value="">اختر محافظة</option>
+                            <option value="jeddah">مدينة جدة</option>
+                            <option value="riyadh">الرياض</option>
+                        </select>
                     </form>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">فرع الأول</li>
-                        <li class="list-group-item">الفرع الثاني</li>
-                        <li class="list-group-item">الفرع الثاني</li>
-                        <li class="list-group-item">الفرع الثاني</li>
+                
+                    <ul class="list-group list-group-flush city-list" id="city-list">
+                        <!-- Cities will be populated here -->
                     </ul>
                 </div>
                 <div id="map"></div>    
@@ -295,7 +292,7 @@
         </div>
     </div>
     <!-- End Branches -->
-    
+
     <!-- JavaScript -->
     <!-- jquery -->
     <script src="js/jquery.js"></script>
@@ -334,17 +331,97 @@
     <!-- Google Map -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBtCZfn9ZW5uBVbQiOYdeKHsJm3Uw-O4Y&callback=initMap" async defer></script>
     <script>
-        function initMap() {
-            var options = {
-                zoom: 13,
-                center: {lat: 40.7128, lng: 74.0060}
-            }
-                var map = new google.maps.Map(document.getElementById('map'), options);
-        }
-
+        // City data structured by governorates
+        const branchesByGovernorate = {
+            jeddah: [
+                { name: 'فرع 1 جدة', coords: { lat: 21.548388059945488, lng: 39.13453673753792 }, phone: 059059059 },
+                { name: 'فرع 2 جدة', coords: { lat: 21.548467891707475, lng: 39.12475203886006 }, phone: 128941321 }
+            ],
+            riyadh: [
+                { name: 'فرع 1 الرياض', coords: { lat: 24.740313987660677, lng: 46.75524745711635 }, phone: 456410 },
+                { name: 'فرع 2 الرياض', coords: { lat: 24.713113218929877, lng: 46.730699521107816 }, phone: 47841313 }
+            ]
+        };
         
-    </script>
-
+        const governorateSelect = document.getElementById('governorate-select');
+        const cityList = document.getElementById('city-list');
+        
+        // Initialize the map variable in a broader scope
+        let map;
+        let infoWindow; // Declare infoWindow variable in a broader scope
+        
+        function initMap() {
+            const options = {
+                zoom: 8,
+                center: { lat: 24.7136, lng: 46.6753 } // Default center
+            };
+        
+            // Initialize the map
+            map = new google.maps.Map(document.getElementById('map'), options);
+        }
+        
+        // Event listener for governorate selection
+        governorateSelect.addEventListener('change', function() {
+            const selectedGovernorate = this.value;
+            
+            // Clear the existing city list
+            cityList.innerHTML = '';
+        
+            // Check if a governorate is selected
+            if (selectedGovernorate && branchesByGovernorate[selectedGovernorate]) {
+                // Populate the city list based on the selected governorate
+                branchesByGovernorate[selectedGovernorate].forEach(branch => {
+                    const listItem = document.createElement('li');
+                    listItem.className = 'list-group-item';
+                    listItem.textContent = branch.name;
+        
+                    // Add click event to the branch item
+                    listItem.addEventListener('click', function() {
+                        // Add marker and open InfoWindow on the branch
+                        addMarker(branch);
+                    });
+        
+                    cityList.appendChild(listItem);
+                });
+            }
+        });
+        
+        function addMarker(branch) {
+            var marker = new google.maps.Marker({
+                position: branch.coords,
+                map: map, // Reference to the map
+                icon: {
+                    url: 'image/marker.png',
+                    scaledSize: new google.maps.Size(25, 30)
+                },
+            });
+        
+            // Define the content of the InfoWindow
+            infoWindow = new google.maps.InfoWindow({
+                content: `
+                    <div class="box-map">
+                        <div class="image">
+                            <img src="image/background-map.png" alt="Coffee">
+                        </div>
+                        <h2>${branch.name}</h2>
+                        <p>${branch.phone}</p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=${branch.coords.lat},${branch.coords.lng}" target="_blank">عرض على الخريطة <i class="fa-solid fa-caret-left"></i></a>
+                    </div>
+                `
+            });
+        
+            // Open the InfoWindow on marker click
+            marker.addListener("click", function() {
+                infoWindow.open(map, marker);
+            });
+        
+            // Center the map on the selected marker
+            map.setCenter(branch.coords);
+        }
+        
+        // Initialize the map when the page loads
+        initMap();
+        </script>
 
 
 </body>
